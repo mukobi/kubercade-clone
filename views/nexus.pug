@@ -1,0 +1,22 @@
+html
+  head
+    title Kubercade Nexus
+    style
+      include style.css
+    link(href="https://fonts.googleapis.com/css?family=Lexend+Deca|Press+Start+2P&display=swap" rel="stylesheet")
+  body
+    #kubercade_nexus
+      h1 Kubercade
+      h4 Nexus - Browse Games
+      #gameGrid
+        each gameInfo in gamesList
+          a.gameTile(href=`/games/${gameInfo.game}`)
+            img(src=`/images/${gameInfo.game}_thumbnail.png` alt=`${gameInfo.name} thumbnail`)
+            .gameInfo
+              .gameName= gameInfo.name
+              .description= gameInfo.description
+        .gameTile
+          img(src='/images/kubercade logo.png' alt='Kubercade logo')
+          .gameInfo
+            .gameName More games to be added!
+            .description Coming soon!
